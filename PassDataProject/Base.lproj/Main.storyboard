@@ -81,9 +81,11 @@
                     </view>
                     <connections>
                         <outlet property="loginTF" destination="pfN-2X-XQn" id="xqR-O8-seZ"/>
+                        <outlet property="mainLabel" destination="8AG-w2-yPf" id="yRm-Zs-Xhh"/>
                         <outlet property="passwordTF" destination="6gE-uA-bKx" id="fKh-0Y-eFK"/>
                         <outlet property="resultLabel" destination="PCK-zp-z7f" id="WOW-dR-cy9"/>
                         <segue destination="qLf-5U-cE4" kind="show" identifier="loginEntered" id="yLz-f3-iTn"/>
+                        <segue destination="ElI-KD-zeN" kind="show" identifier="loginEmpty" id="3FT-f4-7A4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,7 +140,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKb-xl-OX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="S5B-t1-qUW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="934.78260869565224" y="67.633928571428569"/>
+            <point key="canvasLocation" x="936" y="-340"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="p1M-PZ-UFP">
+            <objects>
+                <viewController id="ElI-KD-zeN" customClass="ThirdViewController" customModule="PassDataProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CBv-HO-mcp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naU-FS-XCf">
+                                <rect key="frame" x="125" y="96" width="164" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="C9g-RZ-pP4"/>
+                                    <constraint firstAttribute="width" constant="164" id="gvu-IO-afT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rN6-Xs-jkb">
+                                <rect key="frame" x="169.5" y="406" width="75" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Go to login">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backFirstVCTapped:" destination="ElI-KD-zeN" eventType="touchUpInside" id="7ln-Tq-hmF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LM7-QM-ymy"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rN6-Xs-jkb" firstAttribute="centerY" secondItem="CBv-HO-mcp" secondAttribute="centerY" id="AXF-j8-hHK"/>
+                            <constraint firstItem="naU-FS-XCf" firstAttribute="top" secondItem="LM7-QM-ymy" secondAttribute="top" constant="96" id="Idd-qv-3ad"/>
+                            <constraint firstItem="naU-FS-XCf" firstAttribute="centerX" secondItem="LM7-QM-ymy" secondAttribute="centerX" id="OKx-WJ-hRJ"/>
+                            <constraint firstItem="rN6-Xs-jkb" firstAttribute="centerX" secondItem="CBv-HO-mcp" secondAttribute="centerX" id="bfi-Ek-Lie"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wuQ-jc-k0a"/>
+                    <connections>
+                        <outlet property="labelThirdVC" destination="naU-FS-XCf" id="UhR-lO-fu9"/>
+                        <segue destination="In0-28-suc" kind="unwind" identifier="closeThirdVC" unwindAction="unwindSegueToVCWithSegue:" id="2wd-cS-Zpa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TYw-KI-ERp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="In0-28-suc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="934.78260869565224" y="375.66964285714283"/>
         </scene>
     </scenes>
     <resources>
